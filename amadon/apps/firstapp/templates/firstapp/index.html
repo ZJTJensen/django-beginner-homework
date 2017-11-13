@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="wrapper">
+        <h1>Amadon Store!</h1>
+        <div id = "table">
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+                    <tr>
+                        <th>
+                            <p>Dojo Tshirt (Alum only)</p>
+                        </th>
+                        <th>
+                            <p>$19.99</p>
+                        </th>
+                        <th>
+                        <form action="/firstapp/process" method='post'>
+                            {% csrf_token %}
+                            <select name="nums">
+                                
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <input type="hidden" name="price" value="19.99">
+                            <input type="submit" value="Buy">
+
+                        </form>
+                    </th>
+                </tr>
+                <tr>
+                        <th>
+                            <p>Dojo sweater(Alum only)</p>
+                        </th>
+                        <th>
+                            <p>$29.99</p>
+                        </th>
+                        <th>
+                        <form action="/firstapp/process" method='post'>
+                            {% csrf_token %}
+                            <select name="nums">
+                             
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <input type="hidden" name="price" value="29.99">
+                            <input type="submit" value="Buy">
+
+                        </form>
+                    </th>
+                </tr>
+                <tr>
+                        <th>
+                            <p>Dojo cup (Alum only)</p>
+                        </th>
+                        <th>
+                            <p>$4.99</p>
+                        </th>
+                        <th>
+                        <form action="/firstapp/process" method='post'>
+                            {% csrf_token %}
+
+                            <select name="nums">
+                                
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <input type="hidden" name="price" value="4.99">
+                            <input type="submit" value="Buy">
+
+                        </form>
+                    </th>
+                </tr>
+                <tr>
+                        <th>
+                            <p>Algorithim Book</p>
+                        </th>
+                        <th>
+                            <p>$49.99</p>
+                        </th>
+                        <th>
+                        <form action="/firstapp/process" method='post'>
+                            {% csrf_token %}
+                            <select name="nums">
+                                
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <input type="hidden" name="price" value="49.99">
+                            <input type="submit" value="Buy">
+
+                        </form>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Form input</legend>
+    <form action="process" method ='post'>
+            {% csrf_token %}
+        Your Name: <input type ='text' name= 'namer'>
+        Dojo Location<select name="locations">
+                    <option value="Seatle">Seatle</option>
+                    <option value="Washington">Washington</option>
+                    <option value="SanJose">SanJose</option>
+                    <option value="Other">Other</option>
+                    </select>
+        Favorite Language<select name="language">
+                <option value="Python">Python</option>
+                <option value="Javascirpt">Javascirpt</option>
+                <option value="HTML">HTML</option>
+                <option value="Other">Other</option>
+                </select>
+        Comment (Optional):
+        <input type="textarea" name = "comments">
+        <input type="submit" value="button">
+    </form>
+</fieldset>
+
+</body>
+</html>

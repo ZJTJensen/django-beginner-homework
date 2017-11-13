@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static '/words/style.css'"> -->
+</head>
+<body>
+<div id = "wrapper">
+    <div id = "add">
+        <p>Add a new Word</p>
+        <form action="/session/process" method = "post">
+            {% csrf_token %}
+            <input type="text" name="word">
+            <input type="radio" name = "radio" value="red">Red<br/>
+            <input type="radio" name = "radio" value="green">Green<br/>
+            <input type="radio" name = "radio" value="blue">Blue<br/>
+            <input type="checkbox" name="size">Show in BIG fonts! <br/>
+            <input type="submit" name = "submit" value="Add to Session">
+        </form>
+    </div>
+    <div id = "session">
+        <form action="/session/clear" method="post">
+            {% csrf_token %}
+            <input type="submit" name = "clear" value="clear Session">
+        </form>
+        <table>
+            <tr>
+                <th>Words</th>
+                <th>Date</th>
+            </tr> 
+            {% for index in request.session.words %}
+            <tr>
+                <td>
+                <p style="color:{{ index.color }}; font-size:{{ index.size }}em">{{ index.word }}</p>
+                </td>
+                <td>
+                {{index.time}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
